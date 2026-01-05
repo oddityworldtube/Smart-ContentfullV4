@@ -96,7 +96,7 @@ export const DEFAULT_PROMPTS: PromptTemplate[] = [
 3. **TONE & PACING:** Maintain a {tone} tone. You MUST engineer the rhythm specifically for the attention span of {audience}. To prevent {audience} from getting bored/distracted, Maintain a rhythmic flow suitable for narration. Use short, impactful sentences, but group them into coherent paragraphs rather than isolated lines. Ensure smooth transitions between ideas to create a natural storytelling pace.STRICTLY AVOID long, run-on sentences connected by conjunctions; use full stops (.) frequently to create dramatic pauses that allow {audience} to process the information.
 4. **Visual and Sensory Language:** Write "for the ear but draw for the eye." Use descriptive and sensory words that evoke mental images. Avoid abstract concepts; instead of saying "Technology has improved," say "This technology has made a tremendous leap at an astonishing speed." Minimize metaphors and similes; keep your style simple.
 5. **DIRECT ADDRESS:** Heavily use the second person (e.g., "you", "your") appropriate for the target language ({language}). Address the viewer's specific pains, fears, and ambitions directly to build an intimate connection.
-
+6. **SHOW, DON'T TELL:** Do not just state facts. Use sensory details. Instead of saying "The king was angry," describe how "The king's knuckles turned white as he gripped his throne." Make the listener *feel* the scene.
 **WORD COUNT ADHERENCE (STRICT REQUIREMENT):**
 - **Target Length:** Exactly {wordCount} words. 
 - **Expansion Strategy:** If the topic is broad, you MUST expand deeply into technical details, real-world examples, historical context, and psychological analysis to reach the required length. Do NOT be repetitive; instead, provide more unique value and depth in each section.
@@ -326,7 +326,7 @@ You MUST return a valid JSON object with these EXACT keys:
 
 **REQUIREMENTS:**
 1. **YouTube Meta:** Viral Title, Description (with timestamps & hashtags), SEO Tags.
-2. **Shorts Script:** Extract the most interesting fact into a 60s script (Hook -> Value -> CTA). **Write strictly in {language}. IF (and only if) the language is 'Arabic', you MUST use ONLY Modern Standard Arabic (Fusha/الفصحى) and strictly AVOID any regional dialects.** STRICTLY FORBIDDEN to use any labels, brackets, or section headers like [Hook], [Value], or [CTA]. Just the spoken words.
+2. **Shorts Script:** Extract the most interesting fact into a 60s script (Hook -> Value -> CTA). **Write strictly in {language}. IF (and only if) the language is 'Arabic', you MUST use ONLY Modern Standard Arabic (Fusha/الفصحى) and strictly AVOID any regional dialects.** Make the last sentence of the script vaguely connect back to the first sentence to create a perfect seamless loop. STRICTLY FORBIDDEN to use any labels, brackets, or section headers like [Hook], [Value], or [CTA]. Just the spoken words.
 3. **TikTok:** A punchy description with hashtags.
 
 **OUTPUT FORMAT:**
@@ -363,7 +363,7 @@ Return a SINGLE JSON object with these EXACT keys:
 1. **Tashkeel Processing:**
    - **IF THE TEXT IS ARABIC:** Add full Arabic diacritics (Harakat/Tashkeel).
    - **IF THE TEXT IS NOT ARABIC:** This is a CRITICAL instruction. You MUST return the original text character-for-character in the "tashkeel" field. DO NOT translate it. DO NOT add diacritics. DO NOT change it in any way.
-2. **Visual Prompt:** Write a detailed English image generation prompt for the scene. Append ", no text, 8k, {style}".
+2. **Visual Prompt:** Write a detailed English image generation prompt for the scene. **Focus on Wide Shots with deep depth of field.** Append ", Cinematic Lighting, Volumetric Fog, Hyper-detailed, Unreal Engine 5 Render, Wide Angle Shot, no text, 8k, {style}".
 3. **SFX:** Suggest a one-word sound effect keyword (e.g., "wind", "click", "crowd").
 
 **Output:** 
