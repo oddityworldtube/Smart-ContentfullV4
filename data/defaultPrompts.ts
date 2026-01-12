@@ -365,13 +365,21 @@ Return a SINGLE JSON object with these EXACT keys:
 1. **Tashkeel Processing:**
    - **IF THE TEXT IS ARABIC:** Add full Arabic diacritics (Harakat/Tashkeel).
    - **IF THE TEXT IS NOT ARABIC:** This is a CRITICAL instruction. You MUST return the original text character-for-character in the "tashkeel" field. DO NOT translate it. DO NOT add diacritics. DO NOT change it in any way.
-2. **Visual Prompt Structure:** Write a detailed English image generation prompt following this **EXACT ORDER**:
-   - **A) Subject:** Describe the scene, character action, and location (Focus on Wide Shots).
+2. **Context & Material Adaptation (CRITICAL):**
+   - **Step 1: Detect Genre:** Analyze the input text to determine the era and theme (e.g., Modern Tech/AI, Ancient History, Nature, Corporate).
+   - **Step 2: Adapt Materials:** You must translate visual metaphors to match the detected genre:
+     - **IF TECH/MODERN:** Use materials like **Glass, Concrete, Brushed Metal, Neon, Server Racks, Fiber Optics**. (STRICTLY FORBIDDEN: Ancient stone, bricks, torches, old wood).
+     - **IF HISTORY/MYTH:** Use Stone, Marble, Ruins, Parchment, Fire.
+     - **IF PSYCHOLOGY/ABSTRACT:** Use Surreal shapes, Fog, Neural patterns, Mirrors.
+   - *Example:* If text says "Wall of ambition" in a Tech script, generate "A towering wall of glass servers", NOT "A brick wall".
+   
+3. **Visual Prompt Structure:** Write a detailed English image generation prompt following this **EXACT ORDER**:
+   - **A) Subject:** Describe the scene using the **Adapted Materials** from Step 2 (Focus on Wide Shots).
    - **B) Art Style:** Inject the style keywords: "{style}" immediately after the subject.
    - **C) Enhancements:** Add "Unreal Engine 5 Render, no text" at the very end.
    - **NOTE:** Do NOT repeat keywords like "8k", "Cinematic", or "Detailed" if they are already present in the Art Style.
 
-3. **SFX:** Suggest a one-word sound effect keyword (e.g., "wind", "click", "crowd").
+4. **SFX:** Suggest a one-word sound effect keyword (e.g., "wind", "click", "crowd").
 
 **Output:** 
 Return a valid JSON ARRAY. Do not use Markdown code blocks.
