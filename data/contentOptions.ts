@@ -34,7 +34,7 @@ export const audiences = [
 
 // تحويل CTAs إلى توجيه "ماستر" موحد لدمج الدعوة للفعل بذكاء
 export const ctas = [
-  "Seamlessly integrate a request to Subscribe, Ring the Bell, and Comment into the conclusion. Match the persona's voice and avoid robotic clichés."
+  "Briefly ask the user to Subscribe and Comment. Keep it under 10 words and very energetic."
 ];
 
 export const smartProfiles: SmartProfile[] = [
