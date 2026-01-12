@@ -117,10 +117,13 @@ export const DEFAULT_PROMPTS: PromptTemplate[] = [
      *   Structure: Thematic layers. Peel back the layers of the topic one by one (Concept -> Evidence -> Dark Implication).
      *   Focus: Psychological triggers, hidden truths, and answering "Why" rather than just "What".
    - **GENERAL RULE:** Whichever structure you use, you MUST achieve the {wordCount} by adding depth, specific real-world examples, and sensory details, NOT by repetition.
-3. **CONCLUSION & INTEGRATED ACTION (CRITICAL):**
-   - End with a decisive, persuasive final paragraph.
-   - **ACTION INSTRUCTION:** "{cta}"
-   - **ANTI-ROBOT RULE:** You are STRICTLY FORBIDDEN from using cliché phrases or separate lines like "Conclusion: Subscribe now." Ensure the call to action flows naturally with the narrative.
+3. **THE PUNCHY OUTRO (FAST & DIRECT):**
+   - **STRICT PROHIBITION:** Do NOT summarize the video. Do NOT say "In conclusion" or "To sum up". The viewer already watched the video, they don't need a recap.
+   - **Structure:** 
+     1. One final powerful thought or question that lingers in the viewer's mind (Max 1 sentence).
+     2. Execute this action immediately: "{cta}".
+   - **LENGTH LIMIT:** The entire outro must be LESS than 40 words.
+   - **Flow:** Hit the viewer with the final insight -> Call to Action -> End. No fluff. No long goodbyes   
 
 **FORMATTING RULES (VOICEOVER READY):**
 1. **CLEAN TEXT ONLY:** DO NOT use Markdown bolding (**text**), hashes (#), or any symbols. The text must be clean plain text.
