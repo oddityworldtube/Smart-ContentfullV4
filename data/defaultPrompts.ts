@@ -305,13 +305,12 @@ You MUST return a valid JSON object with these EXACT keys:
         {style}
 
         **INSTRUCTIONS:**
-        1. For EACH segment in the input array, create a unique, detailed image prompt.
-        2. Use the specified Art Style.
-        3. Ensure no text is visible in the generated scenes.
-        4. Append ", no text, 8k" to each prompt.
+        1. For EACH segment, write a prompt in this structure: "[Scene Description], {style}, [Lighting/Mood], [Technical Specs]".
+        2. Ensure the Technical Specs include: "Unreal Engine 5 Render, 8k, no text".
+        3. Keep the prompt descriptive but concise.
 
         **OUTPUT FORMAT:**
-        Return a valid JSON ARRAY of strings. Example: ["Prompt 1...", "Prompt 2..."]
+        Return a valid JSON ARRAY of strings.
         `
     },
     {
@@ -366,7 +365,11 @@ Return a SINGLE JSON object with these EXACT keys:
 1. **Tashkeel Processing:**
    - **IF THE TEXT IS ARABIC:** Add full Arabic diacritics (Harakat/Tashkeel).
    - **IF THE TEXT IS NOT ARABIC:** This is a CRITICAL instruction. You MUST return the original text character-for-character in the "tashkeel" field. DO NOT translate it. DO NOT add diacritics. DO NOT change it in any way.
-2. **Visual Prompt:** Write a detailed English image generation prompt for the scene. **Focus on Wide Shots with deep depth of field.** Append ", Cinematic Lighting, Volumetric Fog, Hyper-detailed, Unreal Engine 5 Render, Wide Angle Shot, no text, 8k, {style}".
+2. **Visual Prompt Structure:** Write a detailed English image generation prompt following this **EXACT ORDER**:
+   - **A) Subject:** Describe the scene, character action, and location (Focus on Wide Shots).
+   - **B) Art Style:** Inject the style keywords: "{style}" immediately after the subject.
+   - **C) Lighting & Atmosphere:** Add descriptors like "Cinematic Lighting, Volumetric Fog, Deep Shadows, Dramatic atmosphere".
+   - **D) Technical Specs:** End with "Deep depth of field, Hyper-detailed, Unreal Engine 5 Render, 8k, no text".
 3. **SFX:** Suggest a one-word sound effect keyword (e.g., "wind", "click", "crowd").
 
 **Output:** 
@@ -375,7 +378,7 @@ Structure:
 [
   {
     "tashkeel": "النص المشكل",
-    "visual_prompt": "English prompt...",
+    "visual_prompt": "Subject description..., {style}, Cinematic lighting..., Unreal Engine 5 Render...",
     "sfx": "sound_keyword"
   }
 ]
