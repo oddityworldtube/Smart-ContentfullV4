@@ -368,8 +368,9 @@ Return a SINGLE JSON object with these EXACT keys:
 2. **Visual Prompt Structure:** Write a detailed English image generation prompt following this **EXACT ORDER**:
    - **A) Subject:** Describe the scene, character action, and location (Focus on Wide Shots).
    - **B) Art Style:** Inject the style keywords: "{style}" immediately after the subject.
-   - **C) Lighting & Atmosphere:** Add descriptors like "Cinematic Lighting, Volumetric Fog, Deep Shadows, Dramatic atmosphere".
-   - **D) Technical Specs:** End with "Deep depth of field, Hyper-detailed, Unreal Engine 5 Render, 8k, no text".
+   - **C) Enhancements:** Add "Unreal Engine 5 Render, no text" at the very end.
+   - **NOTE:** Do NOT repeat keywords like "8k", "Cinematic", or "Detailed" if they are already present in the Art Style.
+
 3. **SFX:** Suggest a one-word sound effect keyword (e.g., "wind", "click", "crowd").
 
 **Output:** 
@@ -378,7 +379,7 @@ Structure:
 [
   {
     "tashkeel": "النص المشكل",
-    "visual_prompt": "Subject description..., {style}, Cinematic lighting..., Unreal Engine 5 Render...",
+    "visual_prompt": "Subject description..., {style}, Unreal Engine 5 Render, no text",
     "sfx": "sound_keyword"
   }
 ]
