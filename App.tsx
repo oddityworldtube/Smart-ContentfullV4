@@ -23,6 +23,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   defaultImageModel: 'gemini-2.5-flash-image',
   customModels: [
     'gemini-3-flash-preview',
+    'gemini-2.5-pro',
     'gemini-2.5-flash',
     'gemini-flash-latest',
     'gemini-robotics-er-1.5-preview',
@@ -47,6 +48,7 @@ const DEFAULT_SETTINGS: AppSettings = {
       'gemini-2.5-flash-lite-preview-09-2025',
       'gemini-2.0-flash-lite-preview-02-05',
       'gemini-2.5-flash',
+      'gemini-2.5-pro',
       'gemini-3-flash-preview'
     ]
   }
