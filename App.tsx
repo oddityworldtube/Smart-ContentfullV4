@@ -34,6 +34,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   modelMapping: {
     heavyTasks: [
       'gemini-3-flash-preview',
+      'gemini-2.5-pro',
       'gemini-2.5-flash',
       'gemini-robotics-er-1.5-preview',
       'gemini-flash-latest',
